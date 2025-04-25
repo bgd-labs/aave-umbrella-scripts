@@ -1,0 +1,15 @@
+forge-std/=lib/aave-umbrella/lib/forge-std/src/
+@openzeppelin/contracts-upgradeable/=lib/aave-umbrella/lib/aave-v3-origin/lib/solidity-utils/lib/openzeppelin-contracts-upgradeable/contracts/
+@openzeppelin/contracts/=lib/aave-umbrella/lib/aave-v3-origin/lib/solidity-utils/lib/openzeppelin-contracts-upgradeable/lib/openzeppelin-contracts/contracts/
+openzeppelin-contracts-upgradeable/=lib/aave-umbrella/lib/aave-v3-origin/lib/solidity-utils/lib/openzeppelin-contracts-upgradeable/
+openzeppelin-contracts/=lib/aave-umbrella/lib/aave-v3-origin/lib/solidity-utils/lib/openzeppelin-contracts-upgradeable/lib/openzeppelin-contracts/
+aave-v3-core/=lib/aave-helpers/lib/aave-address-book/lib/aave-v3-origin/src/core/
+aave-v3-origin-tests/=lib/aave-umbrella/lib/aave-v3-origin/tests/
+aave-v3-origin/=lib/aave-umbrella/lib/aave-v3-origin/src/
+aave-v3-periphery/=lib/aave-helpers/lib/aave-address-book/lib/aave-v3-origin/src/periphery/
+solidity-utils/=lib/aave-umbrella/lib/aave-v3-origin/lib/solidity-utils/src/
+aave-address-book/=lib/aave-helpers/lib/aave-address-book/src/
+aave-helpers/=lib/aave-helpers/src/
+aave-umbrella/=lib/aave-umbrella/
+ds-test/=lib/aave-umbrella/lib/aave-v3-origin/lib/forge-std/lib/ds-test/src/
+erc4626-tests/=lib/aave-umbrella/lib/erc4626-tests/

@@ -1,66 +1,58 @@
-## Foundry
+# Umbrella V1 Deployment Scripts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository contains a set of scripts designed for deploying the first version of the **Umbrella** protocol across various networks, as well as for conveniently validating existing addresses.
 
-Foundry consists of:
+## Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+All contracts are deployed using the `CREATE2` opcode, which enables deterministic address generation. By knowing the required Aave component addresses (such as the `Pool`, `Proxy Factory`, `Executor`, and `Collector`), you can accurately predict the final deployment addresses of the contracts.
 
-## Documentation
+## Structure
 
-https://book.getfoundry.sh/
+Each file inside the `scripts/networks` directory includes two contracts:
+
+- **Deployment & Verification Contract** – Handles the deployment and verification of `Umbrella` contracts on the target network.
+- **Address Prediction Contract** – Computes the full set of system addresses deterministically based on network parameters and known components.
+
+## Behavior
+
+If a full Umbrella V1 system is already deployed on a given network, the deployment script will detect this and skip any redundant operations. This ensures safe and idempotent deployments.
 
 ## Usage
 
-### Build
+To get started, copy the contents of the .env.example file into a new .env file:
 
-```shell
-$ forge build
+```bash
+cp .env.example .env
 ```
 
-### Test
+Next, configure the required environment variables. You can also override the default RPC settings and provide your API keys if needed.
 
-```shell
-$ forge test
+Install the project dependencies using Foundry:
+
+```bash
+forge install
 ```
 
-### Format
+The commands required to run the scripts are listed above each corresponding contract in the `scripts` folder.
 
-```shell
-$ forge fmt
+For example, to deploy Umbrella for the Core Pool on the Ethereum mainnet using a Ledger wallet:
+
+```bash
+make deploy-ledger contract=scripts/networks/DeployEthereum.s.sol:DeployUmbrellaCore chain=mainnet
 ```
 
-### Gas Snapshots
+Using private-key:
 
-```shell
-$ forge snapshot
+```bash
+make deploy-pk contract=scripts/networks/DeployEthereum.s.sol:DeployUmbrellaCore chain=mainnet
 ```
 
-### Anvil
+These scripts will deploy the `Umbrella` system to the Ethereum network.
 
-```shell
-$ anvil
+Predict:
+
+```bash
+make predict contract=scripts/networks/DeployEthereum.s.sol:PredictUmbrellaCore chain=mainnet dry=true
 ```
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This script will calculate the `Umbrella` system addresses on the Ethereum network.
