@@ -12,6 +12,8 @@ import {EthereumScript} from 'solidity-utils/contracts/utils/ScriptUtils.sol';
 
 import {DeployUmbrellaSystem} from 'aave-umbrella/scripts/deploy/DeployUmbrella.s.sol';
 
+address constant FinancialCommittee = 0x22740deBa78d5a0c24C58C740e3715ec29de1bFa;
+
 /**
  * @dev Deploy Ethereum Core
  * deploy-command: make deploy-ledger contract=scripts/networks/DeployEthereum.s.sol:DeployUmbrellaCore chain=mainnet
@@ -23,7 +25,8 @@ contract DeployUmbrellaCore is EthereumScript {
       AaveV3Ethereum.POOL,
       MiscEthereum.TRANSPARENT_PROXY_FACTORY,
       GovernanceV3Ethereum.EXECUTOR_LVL_1,
-      address(AaveV3Ethereum.COLLECTOR)
+      address(AaveV3Ethereum.COLLECTOR),
+      FinancialCommittee
     );
   }
 }
@@ -70,7 +73,8 @@ contract PredictUmbrellaCore is EthereumScript {
       AaveV3Ethereum.POOL,
       MiscEthereum.TRANSPARENT_PROXY_FACTORY,
       GovernanceV3Ethereum.EXECUTOR_LVL_1,
-      address(AaveV3Ethereum.COLLECTOR)
+      address(AaveV3Ethereum.COLLECTOR),
+      FinancialCommittee
     );
   }
 }
