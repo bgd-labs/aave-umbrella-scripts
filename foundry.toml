@@ -36,12 +36,11 @@ avalanche = "${RPC_AVALANCHE}"
 arbitrum = "${RPC_ARBITRUM}"
 fantom = "${RPC_FANTOM}"
 optimism = "${RPC_OPTIMISM}"
-harmony = "${RPC_HARMONY}"
 scroll = "${RPC_SCROLL}"
 metis = "${RPC_METIS}"
 base = "${RPC_BASE}"
 base_sepolia = "${RPC_BASE_SEPOLIA}"
-bnb = "${RPC_BNB}"
+bsc = "${RPC_BNB}"
 gnosis = "${RPC_GNOSIS}"
 linea = "${RPC_LINEA}"
 sonic = "${RPC_SONIC}"
@@ -56,12 +55,11 @@ avalanche = { key="${ETHERSCAN_API_KEY_AVALANCHE}", chainId=43114 }
 arbitrum = { key="${ETHERSCAN_API_KEY_ARBITRUM}", chainId=42161 }
 fantom = { key="${ETHERSCAN_API_KEY_FANTOM}", chainId=250 }
 optimism = { key="${ETHERSCAN_API_KEY_OPTIMISM}", chainId=10 }
-harmony = { key="${ETHERSCAN_API_KEY_HARMONY}", chainId=1666600000 }
 scroll = { key="${ETHERSCAN_API_KEY_SCROLL}", chainId=534352 }
 metis = { key="any", chainId=1088, url='https://andromeda-explorer.metis.io/' }
 base = { key="${ETHERSCAN_API_KEY_BASE}", chainId=8453 }
 base_sepolia = { key="${ETHERSCAN_API_KEY_BASE_SEPOLIA}", chainId=84532 }
-bnb = { key="${ETHERSCAN_API_KEY_BNB}", chainId=56 }
+bsc = { key="${ETHERSCAN_API_KEY_BNB}", chainId=56 }
 gnosis = { key="${ETHERSCAN_API_KEY_GNOSIS}", chainId=100 }
 linea = { key="${ETHERSCAN_API_KEY_LINEA}", chainId=59144 }
 sonic = { key="${ETHERSCAN_API_KEY_SONIC}", chainId=146 }
