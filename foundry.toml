@@ -6,6 +6,8 @@ out = 'out'
 libs = ['lib']
 solc_version = '0.8.27'
 evm_version = 'shanghai'
+optimizer = true
+optimizer_runs = 200
 fs_permissions = [{ access = "write", path = "./reports" }]
 
 [profile.zksync]
@@ -49,22 +51,22 @@ celo = "${RPC_CELO}"
 zksync = "${RPC_ZKSYNC}"
 
 [etherscan]
-mainnet = { key="${ETHERSCAN_API_KEY_MAINNET}", chainId=1 }
-polygon = { key="${ETHERSCAN_API_KEY_POLYGON}", chainId=137 }
-avalanche = { key="${ETHERSCAN_API_KEY_AVALANCHE}", chainId=43114 }
-arbitrum = { key="${ETHERSCAN_API_KEY_ARBITRUM}", chainId=42161 }
-fantom = { key="${ETHERSCAN_API_KEY_FANTOM}", chainId=250 }
-optimism = { key="${ETHERSCAN_API_KEY_OPTIMISM}", chainId=10 }
-scroll = { key="${ETHERSCAN_API_KEY_SCROLL}", chainId=534352 }
-metis = { key="any", chainId=1088, url='https://andromeda-explorer.metis.io/' }
-base = { key="${ETHERSCAN_API_KEY_BASE}", chainId=8453 }
-base_sepolia = { key="${ETHERSCAN_API_KEY_BASE_SEPOLIA}", chainId=84532 }
-bsc = { key="${ETHERSCAN_API_KEY_BNB}", chainId=56 }
-gnosis = { key="${ETHERSCAN_API_KEY_GNOSIS}", chainId=100 }
-linea = { key="${ETHERSCAN_API_KEY_LINEA}", chainId=59144 }
-sonic = { key="${ETHERSCAN_API_KEY_SONIC}", chainId=146 }
-zkevm = { key="${ETHERSCAN_API_KEY_ZKEVM}", chainId=1101 }
-celo = { key="${ETHERSCAN_API_KEY_CELO}", chainId=42220 }
-zksync = { key="${ETHERSCAN_API_KEY_ZKSYNC}", chainId=300 }
+mainnet = { key = "${ETHERSCAN_API_KEY_MAINNET}", chainId = 1 }
+polygon = { key = "${ETHERSCAN_API_KEY_POLYGON}", chainId = 137 }
+avalanche = { key = "${ETHERSCAN_API_KEY_AVALANCHE}", chainId = 43114 }
+arbitrum = { key = "${ETHERSCAN_API_KEY_ARBITRUM}", chainId = 42161 }
+fantom = { key = "${ETHERSCAN_API_KEY_FANTOM}", chainId = 250 }
+optimism = { key = "${ETHERSCAN_API_KEY_OPTIMISM}", chainId = 10 }
+scroll = { key = "${ETHERSCAN_API_KEY_SCROLL}", chainId = 534352 }
+metis = { key = "any", chainId = 1088, url = 'https://andromeda-explorer.metis.io/' }
+base = { key = "${ETHERSCAN_API_KEY_BASE}", chainId = 8453 }
+base_sepolia = { key = "${ETHERSCAN_API_KEY_BASE_SEPOLIA}", chainId = 84532 }
+bsc = { key = "${ETHERSCAN_API_KEY_BNB}", chainId = 56 }
+gnosis = { key = "${ETHERSCAN_API_KEY_GNOSIS}", chainId = 100 }
+linea = { key = "${ETHERSCAN_API_KEY_LINEA}", chainId = 59144 }
+sonic = { key = "${ETHERSCAN_API_KEY_SONIC}", chainId = 146 }
+zkevm = { key = "${ETHERSCAN_API_KEY_ZKEVM}", chainId = 1101 }
+celo = { key = "${ETHERSCAN_API_KEY_CELO}", chainId = 42220 }
+zksync = { key = "${ETHERSCAN_API_KEY_ZKSYNC}", chainId = 300 }
 
 # See more config options https://github.com/gakonst/foundry/tree/master/config
