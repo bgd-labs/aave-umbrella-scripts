@@ -19,13 +19,18 @@ If a full Umbrella V1 system is already deployed on a given network, the deploym
 
 ## Usage
 
-To get started, copy the contents of the .env.example file into a new .env file:
+To get started, copy the contents of the `.env.example` file (like public rpc-endpoints and so on) into an `.env` file:
 
 ```bash
 cp .env.example .env
+source .env
 ```
 
-Next, configure the required environment variables. You can also override the default RPC settings and provide your API keys if needed.
+Next, configure the required environment variables and export them to your environment. You can also override the default RPC settings and provide your etherscan API keys if needed.
+
+```bash
+source .env
+```
 
 Install the project dependencies using Foundry:
 
@@ -35,7 +40,19 @@ forge install
 
 The commands required to run the scripts are listed above each corresponding contract in the `scripts` folder.
 
-For example, to deploy Umbrella for the Core Pool on the Ethereum mainnet using a Ledger wallet:
+### Predict and Verify Deployment
+
+To ensure that the deployed contracts are free of malicious code injections and that the deployed addresses match the original code, run the following script:
+
+```bash
+make predict contract=scripts/networks/DeployEthereum.s.sol:PredictUmbrellaCore chain=mainnet dry=true
+```
+
+This script will calculate the `Umbrella` system addresses on the Ethereum network for Core Pool.
+
+### Deploy
+
+To deploy Umbrella for the Core Pool on the Ethereum mainnet using a Ledger wallet:
 
 ```bash
 make deploy-ledger contract=scripts/networks/DeployEthereum.s.sol:DeployUmbrellaCore chain=mainnet
@@ -48,11 +65,3 @@ make deploy-pk contract=scripts/networks/DeployEthereum.s.sol:DeployUmbrellaCore
 ```
 
 These scripts will deploy the `Umbrella` system to the Ethereum network.
-
-Predict:
-
-```bash
-make predict contract=scripts/networks/DeployEthereum.s.sol:PredictUmbrellaCore chain=mainnet dry=true
-```
-
-This script will calculate the `Umbrella` system addresses on the Ethereum network.
